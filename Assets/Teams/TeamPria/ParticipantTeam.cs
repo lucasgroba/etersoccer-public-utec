@@ -22,6 +22,6 @@ namespace Teams.TeamPria
 
         public string GetName() => "TeamPria";
 
-        public string TeamShield => "Black";
+        public string TeamShield => "LogoPria";
     }
 }
