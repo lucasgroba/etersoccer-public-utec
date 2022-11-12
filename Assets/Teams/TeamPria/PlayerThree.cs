@@ -10,13 +10,15 @@ namespace Teams.TeamPria
 
         private float DistanceToGoal = 10;
         private float DistanceToBall = 4;
-        private float MinDistanceToRivals = 5;
+        private float MinDistanceToRivals = 3;
         private float DistanceToPlayer = 10;
         public override void OnUpdate()
         {
             
             var ballPosition = GetBallPosition();
-            if (Vector3.Distance(GetPosition(),ballPosition ) < DistanceToBall){
+            if (Vector3.Distance(GetPosition(),ballPosition ) < DistanceToBall
+                && Vector3.Distance(ballPosition, GetTeamMatesInformation()[0].Position) > Vector3.Distance(GetPosition(),ballPosition ) 
+                    &&  Vector3.Distance(ballPosition, GetTeamMatesInformation()[1].Position) > Vector3.Distance(GetPosition(),ballPosition )){
                 MoveBy(GetDirectionTo(ballPosition));
             }
             else{
@@ -34,7 +36,7 @@ namespace Teams.TeamPria
         {
             if (Vector3.Distance(GetPosition(), GetRivalGoalPosition() ) > DistanceToGoal ){
                 MoveBy(GetDirectionTo(GetRivalGoalPosition()));
-                if(Vector3.Distance(GetPosition(),GetRivalsInformation()[0].Position) <= MinDistanceToRivals || 
+                /* if(Vector3.Distance(GetPosition(),GetRivalsInformation()[0].Position) <= MinDistanceToRivals || 
                 Vector3.Distance(GetPosition(),GetRivalsInformation()[1].Position) <= MinDistanceToRivals || 
                 Vector3.Distance(GetPosition(),GetRivalsInformation()[2].Position) <= MinDistanceToRivals)
                 {
@@ -48,7 +50,7 @@ namespace Teams.TeamPria
                         var directionToPlayerOne = GetDirectionTo(playerOnePosition);
 	                    ShootBall(directionToPlayerOne, ShootForce.Medium);
                     }  
-                }
+                } */
             }
             else{
                 ShootBall(GetDirectionTo(GetRivalGoalPosition()), ShootForce.High);
@@ -58,21 +60,21 @@ namespace Teams.TeamPria
 
         public override void OnScoreBoardChanged(ScoreBoard scoreBoard)
         {
-            if(GetMyScore() > GetRivalScore() ){
+            /* if(GetMyScore() > GetRivalScore() ){
                 DistanceToGoal = 10;
                 DistanceToBall = 4;
-                MinDistanceToRivals = 5;
+                MinDistanceToRivals = 1;
                 DistanceToPlayer = 10;
             }
             else{
                 DistanceToGoal = 12;
                 DistanceToBall = 6;
-                MinDistanceToRivals = 8;
+                MinDistanceToRivals = 2;
                 DistanceToPlayer = 10;
-            }
+            } */
         }
 
-        public override FieldPosition GetInitialPosition() => FieldPosition.B3;
+        public override FieldPosition GetInitialPosition() => FieldPosition.B2;
 
         public override string GetPlayerDisplayName() => "Martin";
     }
