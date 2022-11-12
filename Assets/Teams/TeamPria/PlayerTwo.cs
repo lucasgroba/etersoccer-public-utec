@@ -1,9 +1,9 @@
-﻿using Core.Games;
+using Core.Games;
 using Core.Player;
 using Core.Utils;
 using UnityEngine;
 
-namespace Teams.TeamPria
+namespace Teams.Pria2
 {
     public class PlayerTwo : TeamPlayer
     {
@@ -75,6 +75,6 @@ namespace Teams.TeamPria
 
         public override FieldPosition GetInitialPosition() => FieldPosition.C2;
 
-        public override string GetPlayerDisplayName() => "Messi";
+        public override string GetPlayerDisplayName() => "Tony Pachueco";
     }
 }

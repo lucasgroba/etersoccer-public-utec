@@ -3,7 +3,7 @@ using Core.Player;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Teams.TeamPria
+namespace Teams.Pria2
 {
     [UsedImplicitly]
     public class ExampleTeam : Team
@@ -20,7 +20,7 @@ namespace Teams.TeamPria
         
         public Color PrimaryColor => new Color(0.6f, 0.6f, 0.6f);
 
-        public string GetName() => "TeamPria";
+        public string GetName() => "Pria2";
 
         public string TeamShield => "LogoPria";
     }

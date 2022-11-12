@@ -4,7 +4,7 @@ using Core.Utils;
 using UnityEngine;
 using UnityEditor;
 
-namespace Teams.TeamPria
+namespace Teams.Pria2
 {
     public class PlayerOne : TeamPlayer
     {

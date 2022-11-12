@@ -3,7 +3,7 @@ using Core.Player;
 using Core.Utils;
 using UnityEngine;
 
-namespace Teams.TeamPria
+namespace Teams.Pria2
 {
     public class PlayerThree : TeamPlayer
     {
